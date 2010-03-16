@@ -2,10 +2,7 @@ ERL          ?= erl
 EBIN_DIRS    := $(wildcard deps/*/ebin)
 APP          := webmachine
 
-all: mochi erl ebin/$(APP).app
-
-mochi:
-	@(cd deps/mochiweb;$(MAKE))
+all: erl ebin/$(APP).app
 
 erl:
 	@$(ERL) -pa $(EBIN_DIRS) -noinput +B \
